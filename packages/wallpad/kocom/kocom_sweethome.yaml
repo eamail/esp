@@ -732,17 +732,6 @@ sensor:
     state_class: "measurement"
     state_number:
       offset: 12
-  - platform: uartex
-    name: "Room 5 Temperature"
-    state: 
-      data: [0x30, 0xd0, 0x00, 0x36, 0x05]
-      mask: [0xff, 0xf0, 0xff, 0xff, 0xff]
-    unit_of_measurement: "°C"
-    icon: "mdi:thermometer"
-    device_class: "temperature"
-    state_class: "measurement"
-    state_number:
-      offset: 12
 
 text_sensor:
   - platform: uartex
