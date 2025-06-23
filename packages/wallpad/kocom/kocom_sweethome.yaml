@@ -756,6 +756,17 @@ text_sensor:
       return "Unknown";
 # AA 55 30 BC 00 01 00 44 00 01 03 00 00 00 00 00 00 00 35 0D 0D
 
+
+  - platform: uartex
+    name: "Filter Log"
+    state: 
+      data: [0x20, 0x01, 0x00, 0x81]
+      mask: [0xFF, 0xFF, 0x00, 0xFF]
+    lambda: |-
+      return to_hex_string(data, len);
+
+
+
 switch:
   - platform: uartex
     name: "Elevator Call"
